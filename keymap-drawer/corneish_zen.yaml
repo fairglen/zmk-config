@@ -1,6 +1,7 @@
 layout: {zmk_keyboard: corneish_zen}
+
 layers:
-  ' ':
+  QWERTY:
   - TAB
   - Q
   - W
@@ -12,7 +13,7 @@ layers:
   - I
   - O
   - P
-  - BSLH
+  - BSPC
   - LCTRL
   - A
   - S
@@ -33,18 +34,19 @@ layers:
   - B
   - N
   - M
-  - CMMA
+  - COMMA
   - DOT
   - FSLH
-  - ENTER
+  - ESC
   - LGUI
   - {t: ESC, h: NUM}
   - SPC
-  - BSPC
+  - RET
   - SYM
   - RALT
+
   NUM:
-  - {type: trans}
+  - TAB
   - '1'
   - '2'
   - '3'
@@ -55,39 +57,40 @@ layers:
   - '8'
   - '9'
   - '0'
+  - BSPC
+  - LCTRL
   - {type: trans}
   - {type: trans}
   - {type: trans}
   - {type: trans}
-  - MUTE
-  - VOL DN
-  - VOL UP
+  - {type: trans}
   - LEFT
   - DOWN
   - UP
   - RIGHT
+  - HOME
+  - END
+  - LSHFT
   - {type: trans}
   - {type: trans}
   - {type: trans}
   - {type: trans}
   - {type: trans}
-  - PLAY PAUSE
-  - BRI DN
-  - BRI UP
+  - PG UP
+  - PG DN
+  - INS
+  - DEL
   - {type: trans}
   - {type: trans}
+  - LGUI
   - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: held}
-  - {type: trans}
-  - {type: trans}
-  - SYSTEM
-  - {type: trans}
+  - SPC
+  - RET
+  - SYM
+  - RALT
+
   SYM:
-  - {type: trans}
+  - TAB
   - EXCL
   - AT
   - HASH
@@ -98,8 +101,8 @@ layers:
   - STAR
   - LPAR
   - RPAR
-  - {type: trans}
-  - {type: trans}
+  - BSPC
+  - LCTRL
   - {type: trans}
   - {type: trans}
   - {type: trans}
@@ -107,11 +110,11 @@ layers:
   - {type: trans}
   - MINUS
   - EQUAL
-  - LBRC
-  - RBRC
-  - PIPE
+  - LBKT
+  - RBKT
+  - BSLH
   - GRAVE
-  - {type: trans}
+  - LSHFT
   - {type: trans}
   - {type: trans}
   - {type: trans}
@@ -119,16 +122,17 @@ layers:
   - {type: trans}
   - UNDER
   - PLUS
-  - LBKT
-  - RBKT
-  - BSLH
+  - LBRC
+  - RBRC
+  - PIPE
   - TILDE
-  - {type: trans}
+  - LGUI
   - SYSTEM
+  - SPC
+  - RET
   - {type: trans}
-  - {type: trans}
-  - {type: held}
-  - {type: trans}
+  - RALT
+
   SYSTEM:
   - {type: trans}
   - {type: trans}
@@ -146,8 +150,8 @@ layers:
   - {type: trans}
   - {type: trans}
   - BT CLR
-  - {t: BT, h: '0'}
-  - {t: BT, h: '1'}
+  - BT 0
+  - BT 1
   - {type: trans}
   - {type: trans}
   - {type: trans}
@@ -157,9 +161,9 @@ layers:
   - {type: trans}
   - {type: trans}
   - {type: trans}
-  - {t: BT, h: '2'}
-  - {t: BT, h: '3'}
-  - {t: BT, h: '4'}
+  - BT 2
+  - BT 3
+  - BT 4
   - {type: trans}
   - {type: trans}
   - {type: trans}
@@ -167,8 +171,8 @@ layers:
   - {type: trans}
   - {type: trans}
   - {type: trans}
-  - {type: held}
   - {type: trans}
   - {type: trans}
-  - {type: held}
+  - {type: trans}
+  - {type: trans}
   - {type: trans}
