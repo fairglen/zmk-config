@@ -13,43 +13,68 @@
   keymap {
     compatible = "zmk,keymap";
 
+    /**********************************************************************
+     * QWERTY (BASE)
+     *
+     * -----------------------------------------------------------------------------------------
+     * |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U  |  I  |  O  |  P  | BKSP |
+     * | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J  |  K  |  L  |  ;  |  '   |
+     * | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M  |  ,  |  .  |  /  | ESC  |
+     *                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
+     *
+     * LWR is layer-tap: tap=ESC, hold=NUM
+     **********************************************************************/
     default_layer {
-      label = " ";
+      label = "QWERTY";
       bindings = <
-        &kp TAB   &kp Q &kp W &kp E    &kp R       &kp T     &kp Y    &kp U   &kp I    &kp O   &kp P    &kp BSLH
-        &kp LCTRL &kp A &kp S &kp D    &kp F       &kp G     &kp H    &kp J   &kp K    &kp L   &kp SEMI &kp SQT
-        &kp LSHFT &kp Z &kp X &kp C    &kp V       &kp B     &kp N    &kp M   &kp CMMA &kp DOT &kp FSLH &kp ENTER
-                              &kp LGUI &lt NUM ESC &kp SPC   &kp BSPC &mo SYM &kp RALT
+        &kp TAB   &kp Q &kp W &kp E &kp R &kp T      &kp Y     &kp U     &kp I     &kp O     &kp P     &kp BSPC
+        &kp LCTRL &kp A &kp S &kp D &kp F &kp G      &kp H     &kp J     &kp K     &kp L     &kp SEMI  &kp SQT
+        &kp LSHFT &kp Z &kp X &kp C &kp V &kp B      &kp N     &kp M     &kp COMMA &kp DOT   &kp FSLH  &kp ESC
+                           &kp LGUI &lt NUM ESC &kp SPACE      &kp RET   &mo SYM   &kp RALT
       >;
     };
 
+    /**********************************************************************
+     * NUM (Numbers + Navigation)
+     *
+     * -----------------------------------------------------------------------------------------
+     * |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
+     * | CTRL |     |     |     |     |     |   | LEFT| DOWN|  UP | RGT |HOME | END  |
+     * | SHFT |     |     |     |     |     |   |PGUP |PGDN | INS | DEL |     |      |
+     **********************************************************************/
     num_layer {
-      label = "NUM";
+      label = "NUM+NAV";
       bindings = <
-       &trans &kp N1 &kp N2 &kp N3     &kp N4       &kp N5         &kp N6   &kp N7     &kp N8 &kp N9    &kp N0 &trans
-       &trans &trans &trans &kp K_MUTE &kp K_VOL_DN &kp K_VOL_UP   &kp LEFT &kp DOWN   &kp UP &kp RIGHT &trans &trans
-       &trans &trans &trans &kp C_PP   &kp C_BRI_DN &kp C_BRI_UP   &trans   &trans     &trans &trans    &trans &trans
-                            &trans     &trans       &trans         &trans   &mo SYSTEM &trans
+        &kp TAB    &kp N1   &kp N2   &kp N3   &kp N4   &kp N5     &kp N6    &kp N7    &kp N8    &kp N9    &kp N0    &kp BSPC
+        &kp LCTRL  &trans   &trans   &trans   &trans   &trans     &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT &kp HOME  &kp END
+        &kp LSHFT  &trans   &trans   &trans   &trans   &trans     &kp PG_UP &kp PG_DN &kp INS   &kp DEL   &trans    &trans
+                          &trans     &trans   &kp SPACE           &kp RET   &mo SYM   &kp RALT
       >;
     };
 
+    /**********************************************************************
+     * SYM (Symbols)
+     **********************************************************************/
     sym_layer {
       label = "SYM";
       bindings = <
-        &trans &kp EXCL &kp AT &kp HASH &kp DLLR   &kp PRCNT   &kp CARET &kp AMPS  &kp STAR &kp LPAR &kp RPAR &trans
-        &trans &trans   &trans &trans   &trans     &trans      &kp MINUS &kp EQUAL &kp LBRC &kp RBRC &kp PIPE &kp GRAVE
-        &trans &trans   &trans &trans   &trans     &trans      &kp UNDER &kp PLUS  &kp LBKT &kp RBKT &kp BSLH &kp TILDE
-                               &trans   &mo SYSTEM &trans      &trans    &trans    &trans
+        &kp TAB  &kp EXCL &kp AT &kp HASH &kp DLLR  &kp PRCNT   &kp CARET &kp AMPS  &kp STAR &kp LPAR  &kp RPAR  &kp BSPC
+        &kp LCTRL &trans  &trans &trans   &trans    &trans      &kp MINUS &kp EQUAL &kp LBKT &kp RBKT  &kp BSLH  &kp GRAVE
+        &kp LSHFT &trans  &trans &trans   &trans    &trans      &kp UNDER &kp PLUS  &kp LBRC &kp RBRC  &kp PIPE  &kp TILDE
+                         &trans  &mo SYSTEM &kp SPACE          &kp RET   &trans    &kp RALT
       >;
     };
 
+    /**********************************************************************
+     * SYSTEM (Bluetooth)
+     **********************************************************************/
     system_layer {
       label = "SYSTEM";
       bindings = <
-        &trans &trans &trans &trans       &trans       &trans         &trans &trans &trans &trans &trans &trans
-        &trans &trans &trans &bt BT_CLR   &bt BT_SEL 0 &bt BT_SEL 1   &trans &trans &trans &trans &trans &trans
-        &trans &trans &trans &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &trans &trans &trans &trans &trans &trans
-                             &trans       &trans       &trans         &trans &trans &trans
+        &trans &trans &trans &trans       &trans       &trans        &trans &trans &trans &trans &trans &trans
+        &trans &trans &trans &bt BT_CLR   &bt BT_SEL 0 &bt BT_SEL 1  &trans &trans &trans &trans &trans &trans
+        &trans &trans &trans &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4  &trans &trans &trans &trans &trans &trans
+                           &trans       &trans       &trans          &trans &trans &trans
       >;
     };
 
