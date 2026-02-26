@@ -1,5 +1,4 @@
 layout: {zmk_keyboard: corneish_zen}
-
 layers:
   QWERTY:
   - TAB
@@ -39,13 +38,12 @@ layers:
   - FSLH
   - ESC
   - LGUI
-  - {t: ESC, h: NUM}
-  - SPC
+  - {t: ESC, h: NUM+NAV}
+  - SPACE
   - RET
   - SYM
   - RALT
-
-  NUM:
+  NUM+NAV:
   - TAB
   - '1'
   - '2'
@@ -82,13 +80,12 @@ layers:
   - DEL
   - {type: trans}
   - {type: trans}
-  - LGUI
   - {type: trans}
-  - SPC
+  - {type: held}
+  - SPACE
   - RET
   - SYM
   - RALT
-
   SYM:
   - TAB
   - EXCL
@@ -126,13 +123,12 @@ layers:
   - RBRC
   - PIPE
   - TILDE
-  - LGUI
-  - SYSTEM
-  - SPC
-  - RET
   - {type: trans}
+  - SYSTEM
+  - SPACE
+  - RET
+  - {type: held}
   - RALT
-
   SYSTEM:
   - {type: trans}
   - {type: trans}
@@ -150,8 +146,8 @@ layers:
   - {type: trans}
   - {type: trans}
   - BT CLR
-  - BT 0
-  - BT 1
+  - {t: BT, h: '0'}
+  - {t: BT, h: '1'}
   - {type: trans}
   - {type: trans}
   - {type: trans}
@@ -161,9 +157,9 @@ layers:
   - {type: trans}
   - {type: trans}
   - {type: trans}
-  - BT 2
-  - BT 3
-  - BT 4
+  - {t: BT, h: '2'}
+  - {t: BT, h: '3'}
+  - {t: BT, h: '4'}
   - {type: trans}
   - {type: trans}
   - {type: trans}
@@ -171,8 +167,8 @@ layers:
   - {type: trans}
   - {type: trans}
   - {type: trans}
+  - {type: held}
   - {type: trans}
   - {type: trans}
-  - {type: trans}
-  - {type: trans}
+  - {type: held}
   - {type: trans}
